@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Rene Grempel</title>
+    <style>
+        /* Allgemeine Stile */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+            line-height: 1.6;
+            height: 100%;
+        }
+
+        /* Hintergrundvideo */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 130%; /* Herauszoomen um 30% */
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Overlay für besseren Kontrast */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Leichtes Schwarz-Overlay */
+            z-index: 0;
+        }
+
+        /* Hauptinhalt */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(27, 27, 27, 0.9); /* Transparenter Hintergrund */
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Titel */
+        header {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        header h1 {
+            font-size: 5.5rem;
+            color: #ffffff;
+            font-family: 'Cinzel', serif; /* INCEPTION-ähnlicher Font */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            color: #f39c12;
+            margin-top: 10px;
+        }
+
+        h2 {
+            color: #f39c12;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #444;
+            display: inline-block;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section p {
+            margin: 5px 0;
+        }
+
+        /* Filmgalerie */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery .coming-soon {
+            width: 250px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(27, 27, 27, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            color: #e0e0e0;
+            font-size: 1.2rem;
+        }
+
+        .gallery .coming-soon span {
+            font-size: 1.5rem;
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1b1b1b;
+            color: #888;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #f39c12;
+        }
+
+        footer .contact-info {
+            margin-top: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video-Hintergrund -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="/Users/renegrempel/Downloads/showreel.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>Rene Grempel</h1>
+        <h2>Filmproduzent | Programmierer</h2>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <div class="container">
+        <!-- Persönliche Informationen -->
+        <div class="section">
+            <h2>Persönliche Informationen</h2>
+            <p><strong>Geburtsdatum:</strong> 30.09.1999</p>
+            <p><strong>Geburtsort:</strong> Saratow, Russische Föderation</p>
+            <p><strong>Adresse:</strong> Roonstraße 47, 50674 Köln</p>
+        </div>
+
+        <!-- Berufliches Profil -->
+        <div class="section">
+            <h2>Berufliches Profil</h2>
+            <p>Zertifizierter Filmproduzent mit einem Diplom (Spezialist) in Regieführung und Filmproduktion. Leidenschaft für naturwissenschaftliche Themen sowie für futuristische Technologien wie Künstliche Intelligenz, Quantencomputing und Weltraumforschung. Vielseitig und versiert im Umgang mit verschiedenen Programmiersprachen und mit einer besonderen Begeisterung für kreative Problemlösungen.</p>
+        </div>
+
+        <!-- Ausbildung -->
+        <div class="section">
+            <h2>Ausbildung</h2>
+            <p><strong>09/2019 – 07/2024:</strong> Gerassimow-Institut für Kinematographie (VGIK), Moskau<br>
+            Abschluss: Diplom (Spezialist) in Regieführung und Filmproduktion</p>
+            <p><strong>09/2011 – 07/2019:</strong> Dreikönigsgymnasium, Köln<br>
+            Abschluss: Allgemeine Hochschulreife (Abitur)</p>
+        </div>
+
+        <!-- Praktische Erfahrungen -->
+        <div class="section">
+            <h2>Praktische Erfahrungen</h2>
+            <p><strong>01/2022 – 07/2024:</strong> Filmprojektleiter – VGIK Filmproduktionsprogramm, Moskau</p>
+            <p><strong>08/2020 – 12/2021:</strong> Praktikum – Mosfilm Studio, Moskau</p>
+            <p><strong>06/2019 – 07/2019:</strong> Praktikum – WDR, Köln</p>
+        </div>
+
+        <!-- Kenntnisse -->
+        <div class="section">
+            <h2>Kenntnisse</h2>
+            <p><strong>Sprachen:</strong> Deutsch, Englisch, Russisch, Französisch</p>
+            <p><strong>Technische Fähigkeiten:</strong> Python, C++, Java, HTML, CSS, Swift, Adobe Premiere, Davinci Resolve, Final Cut Pro, Blender</p>
+        </div>
+
+        <!-- Filmgalerie -->
+        <div class="section">
+            <h2>Filmprojekte</h2>
+            <div class="gallery">
+                <a href="Player1.html" target="_blank">
+                    <img src="/Users/renegrempel/Downloads/FILM-POSTER/EXODUS.jpeg" alt="EXODUS">
+                </a>
+                <a href="Player2.html" target="_blank">
+                    <img src="/Users/renegrempel/Downloads/FILM-POSTER/CRYING_IN_A_FISTFUL.jpeg" alt="CRYING IN A FISTFUL">
+                </a>
+                <a href="Player3.html" target="_blank">
+                    <img src="/Users/renegrempel/Downloads/FILM-POSTER/FAITHFUL_ROBOT.png" alt="FAITHFUL ROBOT">
+                </a>
+                <a href="Player4.html" target="_blank">
+                    <img src="/Users/renegrempel/Downloads/FILM-POSTER/RADIOACTIVITY.jpeg" alt="RADIOACTIVITY">
+                </a>
+                <!-- Neue Filmprojekte -->
+                <div class="coming-soon">
+                    <span>∞</span>
+                    <p>(Coming soon)</p>
+                </div>
+                <div class="coming-soon">
+                    <span>BRAIN-HACK</span>
+                    <p>(Coming soon)</p>
+                </div>
+                <div class="coming-soon">
+                    <span>FERMI-PARADOXON</span>
+                    <p>(Coming soon)</p>
+                </div>
+                <div class="coming-soon">
+                    <span>BLACK CUBE</span>
+                    <p>(Coming soon)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 IXΘΥΣ - PICTURES</p>
+        <div class="contact-info">
+            <p>📧 <a href="mailto:grempelrene@gmail.com">grempelrene@gmail.com</a></p>
+            <p>📞 +49 151 28104607</p>
+            <p>📍 Roonstraße 47, 50674 Köln</p>
+        </div>
+        <!-- Text-Logo -->
+        <div class="text-logo">
+            <p class="logo-main">IXΘΥΣ</p>
+            <div class="logo-line"></div>
+            <p class="logo-sub">PICTURES</p>
+        </div>
+    </footer>
+    
+    <style>
+        /* Styling für das Text-Logo */
+        .text-logo {
+            text-align: center;
+            margin-top: 30px;
+        }
+    
+        .text-logo .logo-main {
+            font-size: 2.5rem;
+            font-family: 'Cinzel', serif; /* Filmähnlicher Font */
+            text-transform: uppercase;
+            color: #ffffff; /* Weiß für Klarheit und Modernität */
+            letter-spacing: 0.8em; /* Erweiterter Abstand für mehr Breite */
+            margin: 0;
+        }
+    
+        .text-logo .logo-line {
+            width: 60%;
+            height: 2px;
+            background: #ffffff; /* Weißer Strich */
+            margin: 15px auto;
+            opacity: 0.8; /* Dezente Transparenz für modernen Look */
+        }
+    
+        .text-logo .logo-sub {
+            font-size: 1.3rem;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            color: #ffffff; /* Weiß für Einheitlichkeit */
+            letter-spacing: 1.1em; /* Breiterer Abstand für gleiche Breite wie IXΘΥΣ */
+            margin: 0;
+            font-weight: 300; /* Leichter Stil für Subtext */
+        }
+    </style>
+
+</body>
+</html>
